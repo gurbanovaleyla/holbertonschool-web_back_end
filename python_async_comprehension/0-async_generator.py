@@ -1,19 +1,16 @@
 #!/usr/bin/env python3
 """
-This module defines an async generator that yields random numbers
-with a 1-second asynchronous delay between each yield.
+Async generator that yields random numbers.
 """
 
 import asyncio
 import random
+from typing import Generator
 
 
-async def async_generator():
+async def async_generator() -> Generator[float, None, None]:
     """
-    Asynchronously generates 10 random numbers between 0 and 10.
-
-    Yields:
-        float: random number between 0 and 10
+    Yields 10 random numbers with a 1-second async delay.
     """
 
     for _ in range(10):
