@@ -1,18 +1,16 @@
 const http = require('http');
 
+const hostname = '127.0.0.1';
+const port = 1245;
+
 const app = http.createServer((req, res) => {
-  if (req.url === '/') {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello Holberton School!');
-  } else if (req.url === '/test') {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('This is a test route');
-  } else {
-    res.writeHead(404, { 'Content-Type': 'text/plain' });
-    res.end('Not found');
-  }
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello Holberton School!');
 });
 
-app.listen(1245);
+app.listen(port, hostname, () => {
+  //   console.log(`Server running at http://${hostname}:${port}/`);
+});
 
 module.exports = app;
