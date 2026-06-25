@@ -9,8 +9,8 @@ class StudentsController {
 
       let response = 'This is the list of our students\n';
 
-      const keys = Object.keys(data).sort((a, b) =>
-        a.toLowerCase().localeCompare(b.toLowerCase())
+      const keys = Object.keys(data).sort(
+        (a, b) => a.toLowerCase().localeCompare(b.toLowerCase()),
       );
 
       for (const field of keys) {
